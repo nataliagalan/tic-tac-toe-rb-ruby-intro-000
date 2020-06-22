@@ -21,7 +21,11 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, current_player)
+=======
+def move(board, index, current_player = "X")
+>>>>>>> 95ead6be1fbaf77dab253352fc40069d8bdc719a
   board[index] = current_player
 end
 
@@ -37,12 +41,21 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
+<<<<<<< HEAD
   if !valid_move?(board, index)
     turn(board)
   else
     move(board, index, current_player(board))
   end
   display_board(board)
+=======
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+  end
+>>>>>>> 95ead6be1fbaf77dab253352fc40069d8bdc719a
 end
 
 def play(board)
@@ -95,7 +108,17 @@ def full?(board)
 end
 
 def draw?(board)
+<<<<<<< HEAD
 full?(board) && !won?(board)
+=======
+   if !won?(board) && full?(board)
+     return true
+   elsif !won?(board) && !full?(board)
+     return false
+   else won?(board)
+     return false
+   end
+>>>>>>> 95ead6be1fbaf77dab253352fc40069d8bdc719a
 end
 
 def over?(board)
@@ -106,13 +129,17 @@ def over?(board)
   end
 end
 
+<<<<<<< HEAD
 
 # winner announcement
+=======
+>>>>>>> 95ead6be1fbaf77dab253352fc40069d8bdc719a
 def winner(board)
    if won?(board)
       return board[won?(board)[0]]
    end
 end
+<<<<<<< HEAD
 
 def winner(board)
   if won?(board)
@@ -139,3 +166,5 @@ def play(board)
     puts "Cat's Game!"
   end
 end
+=======
+>>>>>>> 95ead6be1fbaf77dab253352fc40069d8bdc719a
